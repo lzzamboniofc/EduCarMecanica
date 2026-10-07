@@ -28,9 +28,10 @@ O build otimizado é gerado em `dist/`.
 
 ## Publicação
 
-Cada envio para a branch `main` executa o workflow em
-`.github/workflows/deploy-pages.yml`, gera o projeto com Node.js e publica
-`dist/` no GitHub Pages.
+O projeto mantém compatibilidade direta com o GitHub Pages configurado para
+`main /root`. Os arquivos da raiz podem ser publicados sem alterar a
+configuração atual. O Vite continua disponível para desenvolvimento local e
+para gerar uma versão otimizada em `dist/`.
 
 ## Estrutura
 
