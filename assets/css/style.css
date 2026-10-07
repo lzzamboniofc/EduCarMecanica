@@ -28,7 +28,9 @@
 @media(max-width:575.98px){.brand-official{width:185px;height:60px}.footer-brand{width:245px;height:100px}.hero-media:after{top:34%;right:-8vw}.hero{min-height:700px}.hero .min-vh-100{min-height:700px!important}.hero-copy{padding-top:70px}.section{padding:62px 0}.service-card{min-height:280px}.story-photo{min-height:360px}}
 
 /* Cabeçalho corrigido: sem deslocamento entre topbar, menu e hero */
-body{overflow-x:hidden}
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+@supports(overflow:clip){html,body{overflow-x:clip}}
+img{max-width:100%}
 .fixed-nav{position:sticky;top:0;z-index:1030;padding:10px 0;background:#0b0e10;box-shadow:0 1px 0 rgba(255,255,255,.08)}
 .fixed-nav.scrolled{position:sticky;top:0;padding:8px 0;background:rgba(8,10,12,.98)}
 .fixed-nav .brand-official{height:66px;overflow:hidden}
