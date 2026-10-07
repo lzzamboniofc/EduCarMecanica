@@ -1,5 +1,5 @@
 /* Configuração central: preencher apenas com dados oficiais confirmados. */
-window.educCarConfig = {
+export const educCarConfig = {
   whatsappNumber: '5511962569462',
   phoneDisplay: '(11) 96256-9462',
   address: 'Rua Dante Nizzola, 99 - Rancho Grande - Itu/SP',

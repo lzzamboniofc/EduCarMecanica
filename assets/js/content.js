@@ -1,11 +1,11 @@
 /* Conteúdo real a ser preenchido após receber fotos e avaliações autorizadas. */
-window.educCarContent = {
+export const educCarContent = {
   gallery: [],
   reviews: []
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  const data = window.educCarContent;
+  const data = educCarContent;
   const gallerySection = document.getElementById('galeria');
   const galleryGrid = document.getElementById('galleryGrid');
   const filters = document.getElementById('galleryFilters');

@@ -1,6 +1,13 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.min.css';
+import '../css/style.css';
+import * as bootstrap from 'bootstrap';
+import { educCarConfig } from './config.js';
+import './content.js';
+
 const nav = document.querySelector('.fixed-nav');
 const menu = document.getElementById('navbarMenu');
-const bsMenu = menu && window.bootstrap ? bootstrap.Collapse.getOrCreateInstance(menu, {toggle: false}) : null;
+const bsMenu = menu ? bootstrap.Collapse.getOrCreateInstance(menu, {toggle: false}) : null;
 
 window.addEventListener('scroll', () => nav?.classList.toggle('scrolled', window.scrollY > 35));
 document.querySelectorAll('#navbarMenu a').forEach(link => link.addEventListener('click', () => {
@@ -35,11 +42,10 @@ document.getElementById('diagnosticForm')?.addEventListener('submit', event => {
   const service = document.getElementById('service').value;
   const message = document.getElementById('message').value || 'Gostaria de agendar uma avaliação.';
   const symptoms = [...document.querySelectorAll('input[name="symptom"]:checked')].map(item => item.value);
-  const whatsappNumber = window.educCarConfig?.whatsappNumber || '';
+  const whatsappNumber = educCarConfig.whatsappNumber;
   const text = encodeURIComponent(`Olá, Mecânica EduCar! Meu nome é ${name}.\nVeículo: ${vehicle}\nAssunto: ${service}\nSinais percebidos: ${symptoms.length ? symptoms.join(', ') : 'não informados'}\nRelato: ${message}`);
   if (whatsappNumber) window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank', 'noopener');
-  else if (window.bootstrap) bootstrap.Toast.getOrCreateInstance(document.getElementById('formToast')).show();
-  else alert('Mensagem preparada. Defina o número oficial do WhatsApp no arquivo JavaScript.');
+  else bootstrap.Toast.getOrCreateInstance(document.getElementById('formToast')).show();
 });
 
 const observer = new IntersectionObserver(entries => entries.forEach(entry => {

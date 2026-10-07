@@ -1,34 +1,51 @@
-# Mecânica EduCar — esboço institucional
+# Mecânica EduCar
 
-Site estático responsivo feito com HTML, CSS, Bootstrap 5 e JavaScript puro.
+Site institucional multipágina da Mecânica EduCar, desenvolvido com Node.js,
+Vite, Bootstrap 5 e JavaScript.
 
-Inclui cinco páginas independentes de serviço: motor, freios, suspensão, amortecedores e revisão preventiva.
+## Requisitos
 
-## Abrir
+- Node.js 22 ou superior
+- npm
 
-Abra `index.html` no navegador. Para desenvolvimento, também pode usar a extensão Live Server.
+## Desenvolvimento
 
-## Antes de publicar
+```bash
+npm install
+npm run dev
+```
 
-- Substituir o bloco temporário de marca pela logo oficial.
-- Confirmar endereço, telefone, WhatsApp e horários.
-- Preencher telefone, WhatsApp, endereço, horário, Google Maps e Analytics em `assets/js/config.js`.
-- Validar a lista e os textos de serviços com a oficina.
-- Trocar as imagens demonstrativas por fotos reais autorizadas.
-- Adicionar depoimentos somente depois de receber avaliações reais.
+O Vite exibirá o endereço local do projeto no terminal.
 
-## Recursos preparados
+## Produção
 
-- Diagnóstico interativo por sintomas com mensagem automática para WhatsApp.
-- Página educativa `sinais-do-carro.html`.
-- FAQ com dúvidas comuns.
-- Dados estruturados `AutoRepair` para SEO local.
-- Galeria filtrável: adicionar itens no array `gallery` de `assets/js/content.js`.
-- Avaliações reais: adicionar itens no array `reviews` de `assets/js/content.js`.
-- As seções de galeria e avaliações permanecem ocultas enquanto não houver conteúdo real.
+```bash
+npm run build
+npm run preview
+```
+
+O build otimizado é gerado em `dist/`.
+
+## Publicação
+
+Cada envio para a branch `main` executa o workflow em
+`.github/workflows/deploy-pages.yml`, gera o projeto com Node.js e publica
+`dist/` no GitHub Pages.
 
 ## Estrutura
 
-- `index.html`: conteúdo e seções.
-- `assets/css/style.css`: identidade visual e responsividade.
-- `assets/js/main.js`: menu, animações, modais e formulário.
+- `index.html`: página inicial e fluxo de diagnóstico.
+- `sinais-do-carro.html`: guia educativo de sintomas.
+- `servicos/`: páginas individuais dos serviços.
+- `assets/css/`: identidade visual e responsividade.
+- `assets/js/`: módulos, configurações e interações.
+- `vite.config.js`: entradas do build multipágina.
+
+## Conteúdo configurável
+
+- Dados oficiais: `assets/js/config.js`.
+- Galeria e avaliações: `assets/js/content.js`.
+- As seções sem conteúdo real permanecem ocultas automaticamente.
+
+Antes da publicação definitiva, inclua apenas fotos e avaliações autorizadas
+pela oficina e valide os textos dos serviços.

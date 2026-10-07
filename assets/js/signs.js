@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.min.css';
-import '../css/service.css';
+import '../css/style.css';
+import '../css/signs.css';
 import * as bootstrap from 'bootstrap';
 
 const nav = document.querySelector('.fixed-nav');
